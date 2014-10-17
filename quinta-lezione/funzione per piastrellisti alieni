@@ -1,0 +1,20 @@
+def mcd (b,h,controllo): #controllo dev'essere uguale al numero minore tra "b" ed "h"
+    if b==h:
+        return b
+    if b>h:
+        if b%h==0: #se "b" è divisibile per "h"
+            return h         #il MCD è h
+        else:
+            if (b%(controllo-1)==0 and h%(controllo-1)==0):
+                return controllo-1
+            else:
+                return mcd(b,h,controllo-1)
+            
+    if h>b:
+        if h%b==0: #se "h" è divisibile per "b" 
+            return b         #il MCD è b
+        else:
+            if(h%(controllo-1)==0 and b%(controllo-1)==0):
+                return controllo-1
+            else:
+                return mcd(b,h,controllo-1)
